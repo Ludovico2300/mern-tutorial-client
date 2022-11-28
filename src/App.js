@@ -9,14 +9,14 @@ function App() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getusers")
+    Axios.get("https://mern-tutorial-server.onrender.com/getusers")
       .then((response) => {
         setListOfUsers(response.data)
       })
   }, [])
 
   const createUser = () => {
-    Axios.post("http://localhost:3001/createuser", { name, age, username })
+    Axios.post("https://mern-tutorial-server.onrender.com/createuser", { name, age, username })
       .then((response) => {
         alert("User created successfully!");
         setListOfUsers([...listOfUsers, {name, age, username}])
